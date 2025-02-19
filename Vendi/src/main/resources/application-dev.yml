@@ -1,0 +1,14 @@
+#profiles
+ACTIVE_PROFILE: dev
+APPLICATION_NAME: vendi
+
+#database
+MYSQL_HOST: localhost
+MYSQL_PORT: 3306
+MYSQL_DATABASE: vendi
+MYSQL_USERNAME: root
+MYSQL_PASSWORD: root
+
+#server
+CONTAINER_PORT: 8080
+
