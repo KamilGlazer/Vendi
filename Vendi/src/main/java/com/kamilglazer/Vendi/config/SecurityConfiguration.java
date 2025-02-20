@@ -1,5 +1,6 @@
 package com.kamilglazer.Vendi.config;
 
+import com.kamilglazer.Vendi.domain.USER_ROLE;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -25,6 +26,7 @@ public class SecurityConfiguration {
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers("/api/auth/**").permitAll()
+                        .requestMatchers("/api/coupon/**").hasRole(USER_ROLE.ADMIN.name())
                         .anyRequest().authenticated()
                 )
                 .sessionManagement(session -> session

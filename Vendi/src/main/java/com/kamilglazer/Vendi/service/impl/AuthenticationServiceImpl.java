@@ -5,13 +5,13 @@ import com.kamilglazer.Vendi.dto.request.LoginRequest;
 import com.kamilglazer.Vendi.dto.request.RegisterRequest;
 import com.kamilglazer.Vendi.dto.response.JwtResponse;
 import com.kamilglazer.Vendi.exception.UserNotFoundException;
+import com.kamilglazer.Vendi.exception.UserWithThisEmailAlreadyExists;
 import com.kamilglazer.Vendi.model.User;
 import com.kamilglazer.Vendi.repository.UserRepository;
 import com.kamilglazer.Vendi.service.AuthenticationService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -24,10 +24,12 @@ public class AuthenticationServiceImpl implements AuthenticationService {
     private final PasswordEncoder passwordEncoder;
     private final JwtService jwtService;
     private final AuthenticationManager authenticationManager;
-    private final UserDetailsService userDetailsService;
 
     @Override
     public JwtResponse register(RegisterRequest request) {
+        userRepository.findByEmail(request.getEmail())
+                .ifPresent(user -> {throw new UserWithThisEmailAlreadyExists("User with this email already exists");});
+
         var user = User.builder()
                 .firstName(request.getFirstName())
                 .lastName(request.getLastName())
@@ -38,7 +40,6 @@ public class AuthenticationServiceImpl implements AuthenticationService {
 
         userRepository.save(user);
         var jwtToken = jwtService.generateToken(user);
-
         return JwtResponse.builder()
                 .jwt(jwtToken)
                 .role(user.getRole())
@@ -48,12 +49,17 @@ public class AuthenticationServiceImpl implements AuthenticationService {
 
     @Override
     public JwtResponse login(LoginRequest request) {
-        authenticationManager.authenticate(
-                new UsernamePasswordAuthenticationToken(
-                        request.getEmail(),
-                        request.getPassword()
-                )
-        );
+        try{
+            authenticationManager.authenticate(
+                    new UsernamePasswordAuthenticationToken(
+                            request.getEmail(),
+                            request.getPassword()
+                    )
+            );
+        }catch (Exception e){
+            throw new UserNotFoundException("Invalid email or password");
+        }
+
         var user = userRepository.findByEmail(request.getEmail()).orElseThrow(() -> new UserNotFoundException("Invalid email or password"));
         var jwtToken = jwtService.generateToken(user);
         return JwtResponse.builder()

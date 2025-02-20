@@ -1,10 +1,7 @@
 package com.kamilglazer.Vendi.model;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 import java.time.LocalDateTime;
 
@@ -14,17 +11,26 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode
+@Builder
 public class Coupon {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(unique = true,nullable = false)
     private String code;
+
     private double discountPercentage;
     private LocalDateTime validityStartDate;
     private LocalDateTime validityEndDate;
     private double minimumOrderValue;
-    private boolean isActive=true;
+    private boolean isActive;
+
+    public void updateIsActive(){
+        LocalDateTime now = LocalDateTime.now();
+        this.isActive = validityStartDate != null && validityEndDate !=null &&
+                !now.isBefore(validityStartDate) && !now.isAfter(validityEndDate);
+    }
 
 }
