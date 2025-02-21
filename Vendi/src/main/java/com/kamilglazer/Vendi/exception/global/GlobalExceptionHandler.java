@@ -55,7 +55,7 @@ public class GlobalExceptionHandler {
     }
 
     @ExceptionHandler(MailSendError.class)
-    public ResponseEntity<ErrorDetails> CouponNotFoundHandler(MailSendError ex, WebRequest request){
+    public ResponseEntity<ErrorDetails> MailSendErrorHandler(MailSendError ex, WebRequest request){
         ErrorDetails details = ErrorDetails.builder()
                 .error(ex.getMessage())
                 .details(request.getDescription(false))
@@ -63,6 +63,27 @@ public class GlobalExceptionHandler {
                 .build();
         return new ResponseEntity<>(details,HttpStatus.BAD_REQUEST);
     }
+
+    @ExceptionHandler(CategoryExistsException.class)
+    public ResponseEntity<ErrorDetails> CategoryExistsHandler(CategoryExistsException ex, WebRequest request){
+        ErrorDetails details = ErrorDetails.builder()
+                .error(ex.getMessage())
+                .details(request.getDescription(false))
+                .timestamp(LocalDateTime.now())
+                .build();
+        return new ResponseEntity<>(details,HttpStatus.BAD_REQUEST);
+    }
+
+    @ExceptionHandler(CategoryNotFoundException.class)
+    public ResponseEntity<ErrorDetails> CategoryNotFoundHandler(CategoryNotFoundException ex, WebRequest request){
+        ErrorDetails details = ErrorDetails.builder()
+                .error(ex.getMessage())
+                .details(request.getDescription(false))
+                .timestamp(LocalDateTime.now())
+                .build();
+        return new ResponseEntity<>(details,HttpStatus.BAD_REQUEST);
+    }
+
 
 
 

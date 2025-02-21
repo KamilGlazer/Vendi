@@ -27,6 +27,7 @@ public class SecurityConfiguration {
                 .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers("/api/auth/**").permitAll()
                         .requestMatchers("/api/coupon/**").hasAuthority(USER_ROLE.ADMIN.name())
+                        .requestMatchers("/api/category/**").hasAuthority(USER_ROLE.ADMIN.name())
                         .anyRequest().authenticated()
                 )
                 .sessionManagement(session -> session
