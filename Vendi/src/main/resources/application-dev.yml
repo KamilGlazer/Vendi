@@ -12,3 +12,6 @@ MYSQL_PASSWORD: root
 #server
 CONTAINER_PORT: 8080
 
+#email
+EMAIL_USERNAME: k.glazer2003@gmail.com
+EMAIL_PASSWORD: kfju nhwa piyh ymoe

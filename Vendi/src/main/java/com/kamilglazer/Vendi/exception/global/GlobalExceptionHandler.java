@@ -2,6 +2,7 @@ package com.kamilglazer.Vendi.exception.global;
 
 
 import com.kamilglazer.Vendi.exception.*;
+import com.kamilglazer.Vendi.exception.errorEntity.ErrorDetails;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -52,6 +53,17 @@ public class GlobalExceptionHandler {
                 .build();
         return new ResponseEntity<>(details,HttpStatus.BAD_REQUEST);
     }
+
+    @ExceptionHandler(MailSendError.class)
+    public ResponseEntity<ErrorDetails> CouponNotFoundHandler(MailSendError ex, WebRequest request){
+        ErrorDetails details = ErrorDetails.builder()
+                .error(ex.getMessage())
+                .details(request.getDescription(false))
+                .timestamp(LocalDateTime.now())
+                .build();
+        return new ResponseEntity<>(details,HttpStatus.BAD_REQUEST);
+    }
+
 
 
 }

@@ -1,4 +1,4 @@
-package com.kamilglazer.Vendi.exception;
+package com.kamilglazer.Vendi.exception.errorEntity;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

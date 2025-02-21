@@ -28,5 +28,19 @@ spring:
       schema-locations: classpath:/data/schema.sql
       data-locations: classpath:/data/data.sql
 
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: ${EMAIL_USERNAME}
+    password: ${EMAIL_PASSWORD}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+          ssl:
+            trust: smtp.gmail.com
+
 server:
   port: ${CONTAINER_PORT:8080}

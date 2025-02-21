@@ -9,7 +9,9 @@ import com.kamilglazer.Vendi.exception.UserWithThisEmailAlreadyExists;
 import com.kamilglazer.Vendi.model.User;
 import com.kamilglazer.Vendi.repository.UserRepository;
 import com.kamilglazer.Vendi.service.AuthenticationService;
+import com.kamilglazer.Vendi.service.EmailService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -24,6 +26,7 @@ public class AuthenticationServiceImpl implements AuthenticationService {
     private final PasswordEncoder passwordEncoder;
     private final JwtService jwtService;
     private final AuthenticationManager authenticationManager;
+    private final EmailService emailService;
 
     @Override
     public JwtResponse register(RegisterRequest request) {
@@ -40,6 +43,9 @@ public class AuthenticationServiceImpl implements AuthenticationService {
 
         userRepository.save(user);
         var jwtToken = jwtService.generateToken(user);
+
+        emailService.sendVerificationEmail(user.getEmail(), jwtToken);
+
         return JwtResponse.builder()
                 .jwt(jwtToken)
                 .role(user.getRole())

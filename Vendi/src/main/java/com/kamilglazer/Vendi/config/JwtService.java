@@ -71,4 +71,8 @@ public class JwtService {
         return Keys.hmacShaKeyFor(keyBytes);
     }
 
+    public String getToken(String authHeader){
+        return authHeader.replace("Bearer ", "");
+    }
+
 }

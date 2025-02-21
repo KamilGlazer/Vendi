@@ -72,6 +72,7 @@ public class CouponServiceImpl implements CouponService {
         return couponPage.map(CouponMapper::toDto);
     }
 
+
     @Override
     public CouponDto updateCoupon(Long couponId,CouponDto couponDto) {
         Coupon coupon = couponRepository.findById(couponId).orElseThrow(() -> new CouponNotFoundException("Coupon not found"));
