@@ -5,12 +5,8 @@ import com.kamilglazer.Vendi.model.Address;
 
 public class AddressMapper {
 
-    private static <T> T returnNullIfNull(T object) {
-        return object;
-    }
-
     public static AddressDto toDto(Address address) {
-        return returnNullIfNull(address) == null ? null : AddressDto.builder()
+        return BaseMapper.returnNullIfNull(address) == null ? null : AddressDto.builder()
                 .street(address.getStreet())
                 .city(address.getCity())
                 .postalCode(address.getPostalCode())
@@ -19,7 +15,7 @@ public class AddressMapper {
     }
 
     public static Address toEntity(AddressDto addressDto) {
-        return returnNullIfNull(addressDto) == null ? null : Address.builder()
+        return BaseMapper.returnNullIfNull(addressDto) == null ? null : Address.builder()
                 .street(addressDto.getStreet())
                 .city(addressDto.getCity())
                 .postalCode(addressDto.getPostalCode())

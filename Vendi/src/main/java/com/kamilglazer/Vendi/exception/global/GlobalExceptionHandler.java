@@ -14,18 +14,7 @@ import java.time.LocalDateTime;
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 
-    @ExceptionHandler(UserNotFoundException.class)
-    public ResponseEntity<ErrorDetails> userExceptionHandler(UserNotFoundException ex, WebRequest request) {
-        ErrorDetails details = ErrorDetails.builder()
-                .error(ex.getMessage())
-                .details(request.getDescription(false))
-                .timestamp(LocalDateTime.now())
-                .build();
-        return new ResponseEntity<>(details, HttpStatus.BAD_REQUEST);
-    }
-
-    @ExceptionHandler(UserWithThisEmailAlreadyExists.class)
-    public ResponseEntity<ErrorDetails> userWithThisEmailAlreadyExistsHandler(UserWithThisEmailAlreadyExists ex, WebRequest request){
+    private ResponseEntity<ErrorDetails> createErrorResponse(Exception ex, WebRequest request){
         ErrorDetails details = ErrorDetails.builder()
                 .error(ex.getMessage())
                 .details(request.getDescription(false))
@@ -34,57 +23,18 @@ public class GlobalExceptionHandler {
         return new ResponseEntity<>(details,HttpStatus.BAD_REQUEST);
     }
 
-    @ExceptionHandler(CouponExistsException.class)
-    public ResponseEntity<ErrorDetails> CouponExistsHandler(CouponExistsException ex, WebRequest request){
-        ErrorDetails details = ErrorDetails.builder()
-                .error(ex.getMessage())
-                .details(request.getDescription(false))
-                .timestamp(LocalDateTime.now())
-                .build();
-        return new ResponseEntity<>(details,HttpStatus.BAD_REQUEST);
+    @ExceptionHandler({
+            UserNotFoundException.class,
+            UserWithThisEmailAlreadyExists.class,
+            CouponExistsException.class,
+            CouponNotFoundException.class,
+            MailSendError.class,
+            CategoryExistsException.class,
+            CategoryNotFoundException.class,
+            ProductNotFoundException.class
+    })
+    public ResponseEntity<ErrorDetails> handleAllExceptions(Exception ex, WebRequest request) {
+        return createErrorResponse(ex, request);
     }
-
-    @ExceptionHandler(CouponNotFoundException.class)
-    public ResponseEntity<ErrorDetails> CouponNotFoundHandler(CouponNotFoundException ex, WebRequest request){
-        ErrorDetails details = ErrorDetails.builder()
-                .error(ex.getMessage())
-                .details(request.getDescription(false))
-                .timestamp(LocalDateTime.now())
-                .build();
-        return new ResponseEntity<>(details,HttpStatus.BAD_REQUEST);
-    }
-
-    @ExceptionHandler(MailSendError.class)
-    public ResponseEntity<ErrorDetails> MailSendErrorHandler(MailSendError ex, WebRequest request){
-        ErrorDetails details = ErrorDetails.builder()
-                .error(ex.getMessage())
-                .details(request.getDescription(false))
-                .timestamp(LocalDateTime.now())
-                .build();
-        return new ResponseEntity<>(details,HttpStatus.BAD_REQUEST);
-    }
-
-    @ExceptionHandler(CategoryExistsException.class)
-    public ResponseEntity<ErrorDetails> CategoryExistsHandler(CategoryExistsException ex, WebRequest request){
-        ErrorDetails details = ErrorDetails.builder()
-                .error(ex.getMessage())
-                .details(request.getDescription(false))
-                .timestamp(LocalDateTime.now())
-                .build();
-        return new ResponseEntity<>(details,HttpStatus.BAD_REQUEST);
-    }
-
-    @ExceptionHandler(CategoryNotFoundException.class)
-    public ResponseEntity<ErrorDetails> CategoryNotFoundHandler(CategoryNotFoundException ex, WebRequest request){
-        ErrorDetails details = ErrorDetails.builder()
-                .error(ex.getMessage())
-                .details(request.getDescription(false))
-                .timestamp(LocalDateTime.now())
-                .build();
-        return new ResponseEntity<>(details,HttpStatus.BAD_REQUEST);
-    }
-
-
-
 
 }

@@ -1,10 +1,8 @@
 package com.kamilglazer.Vendi.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
+
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -14,6 +12,7 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class Product {
 
     @Id
@@ -38,7 +37,8 @@ public class Product {
 
     private LocalDateTime createdAt;
 
-    private String Sizes;
+    @ElementCollection
+    private List<String> sizes;
 
     @OneToMany(mappedBy = "product",cascade = CascadeType.ALL,orphanRemoval = true)
     private List<Review> reviews = new ArrayList<>();

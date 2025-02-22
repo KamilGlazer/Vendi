@@ -5,12 +5,8 @@ import com.kamilglazer.Vendi.model.User;
 
 public class UserMapper {
 
-    private static <T> T returnNullIfNull(T object) {
-        return object;
-    }
-
     public static UserResponse toResponse(User user) {
-        return returnNullIfNull(user) == null ? null : UserResponse.builder()
+        return BaseMapper.returnNullIfNull(user) == null ? null : UserResponse.builder()
                 .email(user.getEmail())
                 .firstName(user.getFirstName())
                 .lastName(user.getLastName())
@@ -23,7 +19,7 @@ public class UserMapper {
     }
 
     public static User toEntity(UserResponse userResponse) {
-        return returnNullIfNull(userResponse) == null ? null : User.builder()
+        return BaseMapper.returnNullIfNull(userResponse) == null ? null : User.builder()
                 .email(userResponse.getEmail())
                 .firstName(userResponse.getFirstName())
                 .lastName(userResponse.getLastName())
