@@ -45,6 +45,7 @@
 - Frontend: (Under Development) React, Redux, Tailwind CSS
 
 ### Project Structure
+<hr>
 
 <pre><code>Vendi
 │── config             # Configuration files (JWT, Security, etc.)
@@ -63,6 +64,7 @@
 </code></pre>
 
 ### Installation & Setup
+<hr>
 1. Clone the repository:
 <pre><code>git clone https://github.com/KamilGlazer/Vendi.git
 cd vendi
@@ -81,27 +83,53 @@ docker-compose up --build -d
 <hr>
 
 ### Authentication
-- **POST** `/auth/register` - User Registration
+- **POST** `api/auth/register` - User Registration
 - **POST** `/auth/login` - User Login
 
-### Product Management
-- **GET** `/products` - Get all products
-- **POST** `/products` - Create a new product (Admin only)
-- **PUT** `/products/{id}` - Update a product (Admin only)
-- **DELETE** `/products/{id}` - Delete a product (Admin only)
+### Product 
+- **GET** `api/products` - Get all products
+- **GET** `api/products/{id}` - Get product
+- **GET** `api/products/getByCategory/{categoryId}` - Get product by category id
+- **GET** `api/products/search` - Get products by query
+- **POST** `api/products` - Create a new product (Admin only)
+- **PUT** `api/products/updateProduct/{id}` - Update a product (Admin only)
+- **DELETE** `api/products/{id}` - Delete a product (Admin only)
 
-### Cart & Orders
-- **POST** `/cart/add` - Add item to cart
-- **DELETE** `/cart/remove/{id}` - Remove item from cart
-- **POST** `/order/checkout` - Place an order
+### Review
+- **GET** `api/review` - Get reviews by product id
+- **GET** `api/review/{id}` - Get review by id
+- **POST** `api/review/addReview` - Add review
+- **DELETE** `api/review/{id}` - Delete review (Customer and Admin)
 
-### Coupons
-- **POST** `/coupons` - Create a coupon (Admin only)
-- **GET** `/coupons/{code}` - Validate a coupon
+### Cart
+- **GET** `api/cart` - Get all cart items
+- **GET** `api/cart/cart` - Get cart
+- **GET** `api/cart/{id}` - Get cart item by id
+- **POST** `api/cart` - Add item to cart
+- **POST** `api/cart/coupon` - Add coupon to cart
+- **DELETE** `api/cart/{itemId}` - Remove item from cart 
+- **DELETE** `api/cart` - Remove all items from cart
 
-### Users
-- **GET** `/users/{id}` - Get user details
-- **PUT** `/users/{id}` - Update user information
+### Coupon
+- **GET** `api/coupon` - Get all coupons (Admin only)
+- **POST** `api/coupon` - Create a coupon (Admin only)
+- **PUT** `api/coupon/{id}` - Edit a coupon (Admin only)
+- **DELETE** `api/coupon/{id}` - Delete a coupon (Admin only)
+
+### User
+- **GET** `api/user/profile` - Get user details
+- **POST** `api/user/addAddress` - Add address
+- **PUT** `api/user/{id}` - Delete address
+
+### Category
+- **GET** `api/category` - Get all categories
+- **GET** `api/category/{id}` - Get category by id
+- **GET** `api/category/level/{level}` - Get categories by level
+- **GET** `api/category/parent/{parentId}` -  Get categories by parent id
+- **POST** `api/category` - Create category (Admin only)
+- **PUT** `api/category/{id}` - Update category (Admin only)
+- **DELETE** `api/category/{id}` - Delete category (Admin only)
+
 
 ### Future Enhancements
 - Implementing payment using Stripe
