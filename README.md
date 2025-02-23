@@ -22,7 +22,7 @@
 
 #### Coupons & Discounts
 - Create and manage discount coupons
-- Validate and apply coupons during checkout
+- Validate and apply coupons
 
 #### User Management
 - Registration and login
