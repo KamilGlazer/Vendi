@@ -29,4 +29,11 @@ public class UserController {
         return ResponseEntity.ok(userService.addAddress(token, address));
     }
 
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteAddress(@RequestHeader("Authorization") String authHeader, @PathVariable Long id){
+        String token = jwtService.getToken(authHeader);
+        userService.deleteAddress(token,id);
+        return ResponseEntity.noContent().build();
+    }
+
 }

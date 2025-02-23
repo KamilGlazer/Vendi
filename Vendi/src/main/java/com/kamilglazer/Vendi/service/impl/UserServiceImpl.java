@@ -3,6 +3,8 @@ package com.kamilglazer.Vendi.service.impl;
 import com.kamilglazer.Vendi.config.JwtService;
 import com.kamilglazer.Vendi.dto.AddressDto;
 import com.kamilglazer.Vendi.dto.response.UserResponse;
+import com.kamilglazer.Vendi.exception.AddressException;
+import com.kamilglazer.Vendi.exception.UserNotFoundException;
 import com.kamilglazer.Vendi.mapper.AddressMapper;
 import com.kamilglazer.Vendi.mapper.UserMapper;
 import com.kamilglazer.Vendi.model.Address;
@@ -34,7 +36,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User findUserByEmail(String email) {
-        return userRepository.findByEmail(email).orElseThrow(() -> new RuntimeException("User not found"));
+        return userRepository.findByEmail(email).orElseThrow(() -> new UserNotFoundException("User not found"));
     }
 
     @Override
@@ -49,4 +51,17 @@ public class UserServiceImpl implements UserService {
         return AddressMapper.toDto(savedAddress);
     }
 
+    @Override
+    public void deleteAddress(String token, Long id) {
+        String email = jwtService.extractUsername(token);
+        User user = this.findUserByEmail(email);
+        Address savedAddress = addressRepository.findById(id).orElseThrow(() -> new AddressException("Address not found"));
+        if(user.getAddresses().contains(savedAddress)) {
+            user.getAddresses().remove(savedAddress);
+            userRepository.save(user);
+            addressRepository.delete(savedAddress);
+        }else{
+            throw new AddressException("You can't delete this address");
+        }
+    }
 }

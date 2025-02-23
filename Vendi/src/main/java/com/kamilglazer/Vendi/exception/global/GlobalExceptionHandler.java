@@ -31,7 +31,9 @@ public class GlobalExceptionHandler {
             MailSendError.class,
             CategoryExistsException.class,
             CategoryNotFoundException.class,
-            ProductNotFoundException.class
+            ProductNotFoundException.class,
+            AddressException.class,
+            ReviewException.class
     })
     public ResponseEntity<ErrorDetails> handleAllExceptions(Exception ex, WebRequest request) {
         return createErrorResponse(ex, request);

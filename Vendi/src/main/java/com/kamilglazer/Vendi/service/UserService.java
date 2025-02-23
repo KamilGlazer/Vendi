@@ -8,4 +8,5 @@ public interface UserService {
     UserResponse findUserByJwtToken(String token);
     User findUserByEmail(String email);
     AddressDto addAddress(String token, AddressDto address);
+    void deleteAddress(String token, Long id);
 }
