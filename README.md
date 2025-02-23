@@ -1,4 +1,4 @@
-<h1>Vendi - E-commerce Backend API</h1>
+<h1>Vendi - E-commerce Backend API 💻</h1>
 
 <p>Vendi is a backend application that provides essential endpoints for an e-commerce store. It is built using Spring Boot and follows a modular structure to handle authentication, product management, user management, shopping cart functionality, and more. The frontend for this application is currently under development in React.</p>
 
