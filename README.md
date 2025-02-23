@@ -84,7 +84,7 @@ docker-compose up --build -d
 
 ### Authentication
 - **POST** `api/auth/register` - User Registration
-- **POST** `/auth/login` - User Login
+- **POST** `api/auth/login` - User Login
 
 ### Product 
 - **GET** `api/products` - Get all products
@@ -103,7 +103,6 @@ docker-compose up --build -d
 
 ### Cart
 - **GET** `api/cart` - Get all cart items
-- **GET** `api/cart/cart` - Get cart
 - **GET** `api/cart/{id}` - Get cart item by id
 - **POST** `api/cart` - Add item to cart
 - **POST** `api/cart/coupon` - Add coupon to cart
