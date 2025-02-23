@@ -46,5 +46,35 @@
 
 ### Project Structure
 
+<pre><code>Vendi
+│── config             # Configuration files (JWT, Security, etc.)
+│── controller         # REST API controllers
+│── domain             # Enums and constants
+│── dto                # Data Transfer Objects
+│   ├── request        # DTOs for incoming requests
+│   ├── response       # DTOs for API responses
+│── exception          # Custom exception handling
+│── mapper             # Object mappers
+│── model              # Entity classes for database mapping
+│── repository         # JPA repositories for database interaction
+│── service            # Business logic layer
+│   ├── impl           # Implementations of service interfaces
+│── Application.java   # Main Spring Boot Application
+</code></pre>
+
+### Installation & Setup
+1. Clone the repository:
+<pre><code>git clone https://github.com/KamilGlazer/Vendi.git
+cd vendi
+</code></pre>
+2. Configure Spring Mail in application-dev.yml
+<pre><code>EMAIL_USERNAME:
+EMAIL_PASSWORD:
+</code></pre>
+3. Make sure you are in the /Vendi directory, then enter the following commands in your command line.
+<pre><code>docker-compose up mysql -d 
+mvn clean package
+docker-compose up --build -d
+</code></pre>
 
 
