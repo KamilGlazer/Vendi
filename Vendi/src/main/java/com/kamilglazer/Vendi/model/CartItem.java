@@ -10,6 +10,7 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode
+@Builder
 public class CartItem {
 
     @Id
@@ -24,7 +25,7 @@ public class CartItem {
     private Product product;
 
     private String size;
-    private int quantity = 1;
+    private int quantity;
     private Integer retailPrice;
     private Integer salePrice;
 }

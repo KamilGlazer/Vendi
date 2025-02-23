@@ -14,29 +14,22 @@ import java.time.LocalDateTime;
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 
-    private ResponseEntity<ErrorDetails> createErrorResponse(Exception ex, WebRequest request){
-        ErrorDetails details = ErrorDetails.builder()
+    @ExceptionHandler({UserNotFoundException.class, UserWithThisEmailAlreadyExists.class, CouponExistsException.class, CouponNotFoundException.class,
+            MailSendError.class, CategoryExistsException.class, CategoryNotFoundException.class,
+            ProductNotFoundException.class, AddressException.class, ReviewException.class, CartNotFoundException.class,
+            CartItemException.class
+    })
+    public ResponseEntity<ErrorDetails> handleAllExceptions(Exception ex, WebRequest request) {
+        return createErrorResponse(ex, request);
+    }
+
+    private ResponseEntity<ErrorDetails> createErrorResponse(Exception ex, WebRequest request) {
+        com.kamilglazer.Vendi.exception.errorEntity.ErrorDetails details = com.kamilglazer.Vendi.exception.errorEntity.ErrorDetails.builder()
                 .error(ex.getMessage())
                 .details(request.getDescription(false))
                 .timestamp(LocalDateTime.now())
                 .build();
-        return new ResponseEntity<>(details,HttpStatus.BAD_REQUEST);
-    }
-
-    @ExceptionHandler({
-            UserNotFoundException.class,
-            UserWithThisEmailAlreadyExists.class,
-            CouponExistsException.class,
-            CouponNotFoundException.class,
-            MailSendError.class,
-            CategoryExistsException.class,
-            CategoryNotFoundException.class,
-            ProductNotFoundException.class,
-            AddressException.class,
-            ReviewException.class
-    })
-    public ResponseEntity<ErrorDetails> handleAllExceptions(Exception ex, WebRequest request) {
-        return createErrorResponse(ex, request);
+        return new ResponseEntity<>(details, HttpStatus.BAD_REQUEST);
     }
 
 }

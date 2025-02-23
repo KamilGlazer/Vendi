@@ -35,5 +35,4 @@ public class UserController {
         userService.deleteAddress(token,id);
         return ResponseEntity.noContent().build();
     }
-
 }
