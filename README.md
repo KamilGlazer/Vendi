@@ -40,7 +40,7 @@
 ### Technologies
 <hr>
 
-- Java, Spring Boot, Spring Security (JWT), Spring Data JPA, Spring Mail, Lombok
+- Java, Spring Boot, Spring Security (JWT), Spring Data JPA, Spring Mail, Lombok, Docker
 - Database: MySQL
 - Frontend: (Under Development) React, Redux, Tailwind CSS
 
@@ -77,4 +77,36 @@ mvn clean package
 docker-compose up --build -d
 </code></pre>
 
+### Api Endpoints
+<hr>
+
+### Authentication
+- **POST** `/auth/register` - User Registration
+- **POST** `/auth/login` - User Login
+
+### Product Management
+- **GET** `/products` - Get all products
+- **POST** `/products` - Create a new product (Admin only)
+- **PUT** `/products/{id}` - Update a product (Admin only)
+- **DELETE** `/products/{id}` - Delete a product (Admin only)
+
+### Cart & Orders
+- **POST** `/cart/add` - Add item to cart
+- **DELETE** `/cart/remove/{id}` - Remove item from cart
+- **POST** `/order/checkout` - Place an order
+
+### Coupons
+- **POST** `/coupons` - Create a coupon (Admin only)
+- **GET** `/coupons/{code}` - Validate a coupon
+
+### Users
+- **GET** `/users/{id}` - Get user details
+- **PUT** `/users/{id}` - Update user information
+
+### Future Enhancements
+- Implementing payment using Stripe
+- Adding order history and tracking
+- Deploying the application to the cloud
+
+<i>Frontend Development: The frontend is currently being developed in React...</i>
 
