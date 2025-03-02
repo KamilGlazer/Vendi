@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="7cd3e647-ec7f-41bf-8296-67fd5214d622" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Vendi.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Vendi.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendi/.env" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendi/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendi/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendi/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendi/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendi/docker-compose.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendi/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendi/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendi/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendi/src/main/java/com/kamilglazer/Vendi/Application.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendi/src/main/java/com/kamilglazer/Vendi/config/ApplicationConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendi/src/main/java/com/kamilglazer/Vendi/config/JwtAuthenticationFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendi/src/main/java/com/kamilglazer/Vendi/config/JwtService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendi/src/main/java/com/kamilglazer/Vendi/config/KeyGenerator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendi/src/main/java/com/kamilglazer/Vendi/config/SecurityConfiguration.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendi/src/main/java/com/kamilglazer/Vendi/controller/AuthController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendi/src/main/java/com/kamilglazer/Vendi/controller/CartController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendi/src/main/java/com/kamilglazer/Vendi/controller/CategoryController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendi/src/main/java/com/kamilglazer/Vendi/controller/CouponController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendi/src/main/java/com/kamilglazer/Vendi/controller/ProductController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendi/src/main/java/com/kamilglazer/Vendi/controller/ReviewController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendi/src/main/java/com/kamilglazer/Vendi/controller/UserController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendi/src/main/java/com/kamilglazer/Vendi/domain/ACCOUNT_STATUS.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendi/src/main/java/com/kamilglazer/Vendi/domain/USER_ROLE.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendi/src/main/java/com/kamilglazer/Vendi/dto/AddressDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendi/src/main/java/com/kamilglazer/Vendi/dto/CartDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendi/src/main/java/com/kamilglazer/Vendi/dto/CartItemDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendi/src/main/java/com/kamilglazer/Vendi/dto/CategoryDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendi/src/main/java/com/kamilglazer/Vendi/dto/CouponDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendi/src/main/java/com/kamilglazer/Vendi/dto/ProductDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendi/src/main/java/com/kamilglazer/Vendi/dto/ReviewDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendi/src/main/java/com/kamilglazer/Vendi/dto/request/LoginRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendi/src/main/java/com/kamilglazer/Vendi/dto/request/RegisterRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendi/src/main/java/com/kamilglazer/Vendi/dto/response/ApiResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendi/src/main/java/com/kamilglazer/Vendi/dto/response/JwtResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendi/src/main/java/com/kamilglazer/Vendi/dto/response/UserResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendi/src/main/java/com/kamilglazer/Vendi/exception/AddressException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendi/src/main/java/com/kamilglazer/Vendi/exception/CartItemException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendi/src/main/java/com/kamilglazer/Vendi/exception/CartNotFoundException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendi/src/main/java/com/kamilglazer/Vendi/exception/CategoryExistsException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendi/src/main/java/com/kamilglazer/Vendi/exception/CategoryNotFoundException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendi/src/main/java/com/kamilglazer/Vendi/exception/CouponExistsException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendi/src/main/java/com/kamilglazer/Vendi/exception/CouponNotFoundException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendi/src/main/java/com/kamilglazer/Vendi/exception/MailSendError.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendi/src/main/java/com/kamilglazer/Vendi/exception/ProductNotFoundException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendi/src/main/java/com/kamilglazer/Vendi/exception/ReviewException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendi/src/main/java/com/kamilglazer/Vendi/exception/UserNotFoundException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendi/src/main/java/com/kamilglazer/Vendi/exception/UserWithThisEmailAlreadyExists.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendi/src/main/java/com/kamilglazer/Vendi/exception/errorEntity/ErrorDetails.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendi/src/main/java/com/kamilglazer/Vendi/exception/global/GlobalExceptionHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendi/src/main/java/com/kamilglazer/Vendi/mapper/AddressMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendi/src/main/java/com/kamilglazer/Vendi/mapper/BaseMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendi/src/main/java/com/kamilglazer/Vendi/mapper/CartItemMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendi/src/main/java/com/kamilglazer/Vendi/mapper/CartMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendi/src/main/java/com/kamilglazer/Vendi/mapper/CategoryMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendi/src/main/java/com/kamilglazer/Vendi/mapper/CouponMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendi/src/main/java/com/kamilglazer/Vendi/mapper/ProductMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendi/src/main/java/com/kamilglazer/Vendi/mapper/ReviewMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendi/src/main/java/com/kamilglazer/Vendi/mapper/UserMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendi/src/main/java/com/kamilglazer/Vendi/model/Address.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendi/src/main/java/com/kamilglazer/Vendi/model/Cart.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendi/src/main/java/com/kamilglazer/Vendi/model/CartItem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendi/src/main/java/com/kamilglazer/Vendi/model/Category.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendi/src/main/java/com/kamilglazer/Vendi/model/Coupon.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendi/src/main/java/com/kamilglazer/Vendi/model/Product.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendi/src/main/java/com/kamilglazer/Vendi/model/Review.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendi/src/main/java/com/kamilglazer/Vendi/model/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendi/src/main/java/com/kamilglazer/Vendi/repository/AddressRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendi/src/main/java/com/kamilglazer/Vendi/repository/CartItemRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendi/src/main/java/com/kamilglazer/Vendi/repository/CartRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendi/src/main/java/com/kamilglazer/Vendi/repository/CategoryRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendi/src/main/java/com/kamilglazer/Vendi/repository/CouponRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendi/src/main/java/com/kamilglazer/Vendi/repository/ProductRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendi/src/main/java/com/kamilglazer/Vendi/repository/ReviewRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendi/src/main/java/com/kamilglazer/Vendi/repository/UserRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendi/src/main/java/com/kamilglazer/Vendi/service/AuthenticationService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendi/src/main/java/com/kamilglazer/Vendi/service/CartService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendi/src/main/java/com/kamilglazer/Vendi/service/CategoryService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendi/src/main/java/com/kamilglazer/Vendi/service/CouponService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendi/src/main/java/com/kamilglazer/Vendi/service/EmailService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendi/src/main/java/com/kamilglazer/Vendi/service/ProductService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendi/src/main/java/com/kamilglazer/Vendi/service/ReviewService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendi/src/main/java/com/kamilglazer/Vendi/service/UserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendi/src/main/java/com/kamilglazer/Vendi/service/impl/AuthenticationServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendi/src/main/java/com/kamilglazer/Vendi/service/impl/CartServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendi/src/main/java/com/kamilglazer/Vendi/service/impl/CategoryServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendi/src/main/java/com/kamilglazer/Vendi/service/impl/CouponServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendi/src/main/java/com/kamilglazer/Vendi/service/impl/EmailServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendi/src/main/java/com/kamilglazer/Vendi/service/impl/ProductServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendi/src/main/java/com/kamilglazer/Vendi/service/impl/ReviewServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendi/src/main/java/com/kamilglazer/Vendi/service/impl/UserServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendi/src/main/resources/application-dev.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendi/src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendi/src/main/resources/data/data.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendi/src/main/resources/data/schema.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendi/src/test/java/com/kamilglazer/Vendi/ApplicationTests.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "KamilGlazer"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/KamilGlazer/Vendi.git",
+    "accountId": "dfb483aa-dcb9-4003-9cfe-9b9097ea3d33"
+  }
+}]]></component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 2
+}]]></component>
+  <component name="ProjectId" id="2tlDZfo927eOzQtpKTnoqi7yPyy" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/kglaz/OneDrive/Pulpit/Java - lab",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="Vendi" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.kamilglazer.Vendi.Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-125ca727e0f0-intellij.indexing.shared.core-IU-243.24978.46" />
+        <option value="bundled-js-predefined-d6986cc7102b-76f8388c3a79-JavaScript-IU-243.24978.46" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7cd3e647-ec7f-41bf-8296-67fd5214d622" name="Changes" comment="" />
+      <created>1740917825188</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1740917825188</updated>
+      <workItem from="1740917826537" duration="17000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
